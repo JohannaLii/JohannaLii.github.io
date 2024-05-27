@@ -7,7 +7,6 @@ function onkoKirjautunut(){
     }
 }
 function kirjaudu(){
-    localstorage.setItem("nimi", "johanna")
-
+    localstorage.setItem("nimi", "johanna");
 
 }
