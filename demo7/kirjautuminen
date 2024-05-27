@@ -1,4 +1,4 @@
-document.addEventListner("DOMContentLoaded", onko kirjautunut); 
+document.addEventListener("DOMContentLoaded", onko kirjautunut); 
 
 function onkoKirjautunut(){
     let kirjautunut = "kylla"
@@ -7,6 +7,6 @@ function onkoKirjautunut(){
     }
 }
 function kirjaudu(){
-    localstorage.setItem("nimi", "johanna");
+    localStorage.setItem("nimi", "johanna");
 
 }
