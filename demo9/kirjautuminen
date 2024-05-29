@@ -1,7 +1,12 @@
-<meta charset="UTF-8" />
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8" />
     <title>demo7</title>
     <script type="text/javascript" language="javascript" src="kirjautuminen.js"></script>
+</head>
 
+<body>
     <p id="tervetuloa_teksti">Tervetuloa, </p>
     <input  type="text" id="nimi" placeholder="Syötä nimesi">
     <input id="kirjaudu_nappi" type="submit" value="Kirjaudu sisään" onclick="kirjaudu()" 
