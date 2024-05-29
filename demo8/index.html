@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="fi">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>demo7</title>
+    <meta charset="UTF-8">
     <title>Kirjautuminen</title>
 </head>
-
 <body>
-    <p id="tervetuloa_teksti">Tervetuloa</p>
-    <form id="kirjautumis_lomake"> 
-        <input id="nimi" type="text" placeholder="Syötä nimesi" value="" />
-        <input id="kirjaudu_nappi" type="submit" value="Kirjaudu sisään" onclick="kirjaudu()" />
+    <div id="kirjautumis_lomake">
+        <input type="text" id="nimi" placeholder="Syötä nimesi">
+        <button onclick="kirjaudu()">Kirjaudu</button>
+    </div>
+    <p id="tervetuloa_teksti">Tervetuloa, </p>
+    <button id="kirjaudu_ulos_nappi" onclick="kirjauduUlos()" style="display: none;">Kirjaudu ulos</button>
 
-    </form>
+    <script src="script.js"></script>
 </body>
-
 </html>

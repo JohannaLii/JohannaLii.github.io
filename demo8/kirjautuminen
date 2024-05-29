@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", onkoKirjautunut);
 function onkoKirjautunut() {
     if (localStorage.getItem("kirjautunut") === "kylla") {
         document.getElementById("tervetuloa_teksti").textContent += localStorage.getItem("nimi");
+        document.getElementById("kirjaudu_ulos_nappi").style.display = "block";
+        document.getElementById("kirjautumis_lomake").style.display = "none";
+    } else {
+        document.getElementById("kirjaudu_ulos_nappi").style.display = "none";
+        document.getElementById("kirjautumis_lomake").style.display = "block";
     }
 }
 
@@ -12,7 +17,17 @@ function kirjaudu() {
         localStorage.setItem("nimi", nimi);
         localStorage.setItem("kirjautunut", "kylla");
         document.getElementById("tervetuloa_teksti").textContent += nimi;  // Päivitetään tervetuloteksti myös heti kirjautumisen yhteydessä
+        document.getElementById("kirjaudu_ulos_nappi").style.display = "block";
+        document.getElementById("kirjautumis_lomake").style.display = "none";
     } else {
         alert("Syötä nimesi ennen kirjautumista.");  // Annetaan käyttäjälle ilmoitus, jos nimi on tyhjä
     }
+}
+
+function kirjauduUlos() {
+    localStorage.removeItem("nimi");
+    localStorage.removeItem("kirjautunut");
+    document.getElementById("tervetuloa_teksti").textContent = "Tervetuloa, ";
+    document.getElementById("kirjaudu_ulos_nappi").style.display = "none";
+    document.getElementById("kirjautumis_lomake").style.display = "block";
 }
