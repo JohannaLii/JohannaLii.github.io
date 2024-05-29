@@ -8,6 +8,11 @@ function onkoKirjautunut() {
 
 function kirjaudu() {
     let nimi = document.getElementById("nimi").value;
-    localStorage.setItem("nimi", nimi);
-    localStorage.setItem("kirjautunut", "kylla");
+    if (nimi) {  // Tarkistetaan, että nimi ei ole tyhjä
+        localStorage.setItem("nimi", nimi);
+        localStorage.setItem("kirjautunut", "kylla");
+        document.getElementById("tervetuloa_teksti").textContent += nimi;  // Päivitetään tervetuloteksti myös heti kirjautumisen yhteydessä
+    } else {
+        alert("Syötä nimesi ennen kirjautumista.");  // Annetaan käyttäjälle ilmoitus, jos nimi on tyhjä
+    }
 }
