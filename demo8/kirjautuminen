@@ -13,14 +13,14 @@ function onkoKirjautunut() {
 
 function kirjaudu() {
     let nimi = document.getElementById("nimi").value;
-    if (nimi) {  // Tarkistetaan, että nimi ei ole tyhjä
+    if (nimi) {
         localStorage.setItem("nimi", nimi);
         localStorage.setItem("kirjautunut", "kylla");
-        document.getElementById("tervetuloa_teksti").textContent += nimi;  // Päivitetään tervetuloteksti myös heti kirjautumisen yhteydessä
+        document.getElementById("tervetuloa_teksti").textContent = "Tervetuloa, " + nimi;
         document.getElementById("kirjaudu_ulos_nappi").style.display = "block";
         document.getElementById("kirjautumis_lomake").style.display = "none";
     } else {
-        alert("Syötä nimesi ennen kirjautumista.");  // Annetaan käyttäjälle ilmoitus, jos nimi on tyhjä
+        alert("Syötä nimesi ennen kirjautumista.");
     }
 }
 
