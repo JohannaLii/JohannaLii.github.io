@@ -271,7 +271,7 @@ a:focus {
   display: flex;
   font-size: 10rem;
   text-transform: uppercase;
-  text-orientation: upright;
+  text-orientation: upleft;
   font-weight: bold;
   color: #ffffff;
 }
@@ -292,7 +292,7 @@ a:focus {
   border: none;
   width: 1.5px;
   height: 65px;
-  background-color: #ffffff;
+  background-color: #d10e0e;
 }
 
 .slider_section .detail-box .btn-box {
