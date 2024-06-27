@@ -64,10 +64,26 @@
             </script>
         </head>
         <body>
-            <form id="kirjautumis_lomake">
-                <input type="text" id="nimi" placeholder="Syötä nimesi">
-                <input id="kirjaudu_nappi" type="submit" value="Kirjaudu sisään" onclick="kirjaudu()">
-                <button id="uloskirjautumis_nappi" type="button" onclick="kirjauduUlos()">Kirjaudu ulos</button>
+          <title>Kirjautumislomake</title>
+          <script>
+              function kirjaudu() {
+                  // Lisää toiminto kirjautumista varten
+                  console.log("Kirjaudutaan sisään...");
+              }
+      
+              function kirjauduUlos() {
+                  // Lisää toiminto uloskirjautumista varten
+                  console.log("Kirjaudutaan ulos...");
+              }
+          </script>
+      </head>
+      <body>
+          <form id="kirjautumis_lomake">
+              <input type="text" id="nimi" placeholder="Syötä nimesi">
+              <input id="kirjaudu_nappi" type="submit" value="Kirjaudu sisään" onclick="kirjaudu()">
+              <button id="uloskirjautumis_nappi" type="button" onclick="kirjauduUlos()">Kirjaudu ulos</button>
+          </form>
+      </body>
             
             
           </form>
