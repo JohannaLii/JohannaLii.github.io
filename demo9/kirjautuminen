@@ -1,15 +1,33 @@
-<!DOCTYPE html>
-<html lang="fi">
-<head>
-    <meta charset="UTF-8" />
-    <title>demo7</title>
-    <script type="text/javascript" language="javascript" src="kirjautuminen.js"></script>
-</head>
+document.addEventListener("DOMContentLoaded", onkoKirjautunut);
 
-<body>
-    <p id="tervetuloa_teksti">Tervetuloa, </p>
-    <form id="kirjautumis_lomake"
-    <input  type="text" id="nimi" placeholder="Syötä nimesi">
-    <input id="kirjaudu_nappi" type="submit" value="Kirjaudu sisään" onclick="kirjaudu()" 
-    <input id="uloskirjautumis_nappi" type="submit" value="Kirjaudu ulos" onclick="kirjauduUlos()";>
-</form>
+function onkoKirjautunut() {
+    if (localStorage.getItem("kirjautunut") === "kylla") {
+        document.getElementById("tervetuloa_teksti").textContent += localStorage.getItem("nimi");
+        document.getElementById("kirjaudu_ulos_nappi").style.display = "block";
+        document.getElementById("kirjautumis_lomake").style.display = "none";
+    } else {
+        document.getElementById("kirjaudu_ulos_nappi").style.display = "none";
+        document.getElementById("kirjautumis_lomake").style.display = "block";
+    }
+}
+
+function kirjaudu() {
+    let nimi = document.getElementById("nimi").value;
+    if (nimi) {
+        localStorage.setItem("nimi", nimi);
+        localStorage.setItem("kirjautunut", "kylla");
+        document.getElementById("tervetuloa_teksti").textContent = "Tervetuloa, " + nimi;
+        document.getElementById("kirjaudu_ulos_nappi").style.display = "block";
+        document.getElementById("kirjautumis_lomake").style.display = "none";
+    } else {
+        alert("Syötä nimesi ennen kirjautumista.");
+    }
+}
+
+function kirjauduUlos() {
+    localStorage.removeItem("nimi");
+    localStorage.removeItem("kirjautunut");
+    document.getElementById("tervetuloa_teksti").textContent = "Tervetuloa, ";
+    document.getElementById("kirjaudu_ulos_nappi").style.display = "none";
+    document.getElementById("kirjautumis_lomake").style.display = "block";
+}
